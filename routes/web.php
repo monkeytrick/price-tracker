@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/item/{id}', [App\Http\Controllers\ProductsController::class, 'view_item'])->name('view_item');
+
+// Route::put('admin/classes', [App\Http\Controllers\ClassesController::class, 'update'])->name('admin-bookings.update');
+
